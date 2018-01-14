@@ -5,7 +5,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
 /**
- * use ThreadFactory to set Priority for Thread  (vd: WorkerThreadFactory)
+ * dùng JConsole để kiểm tra số threads đc tạo ra.
+ * Mặc định 1 Process có 11 threads hệ thống + 1 thread chạy hàm main()
+ * >>cmd
+ * >>jconsole
+ * >>Jvisualvm
  *
  */
 public class TestThreadPool2 {
