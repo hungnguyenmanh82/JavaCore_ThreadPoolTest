@@ -42,10 +42,13 @@ public class TestThreadPool2 {
 		}
 
 		public Thread newThread(Runnable r) {
+			//stack size phải thiết lập ở constructor
 			Thread thread = new Thread(r);
+			
 			thread.setPriority(Thread.NORM_PRIORITY);
-			thread.setName(prefix + "-" + counter++);
-			//Thread stack size is configured by JVM. java can not set stack size in source code like C++.
+			thread.setName(prefix + "-" + counter++);		
+			//Thread stack size is configured by JVM. 
+			
 			
 			return thread; 
 		}
