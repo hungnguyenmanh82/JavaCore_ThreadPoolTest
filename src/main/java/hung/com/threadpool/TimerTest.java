@@ -39,6 +39,7 @@ public class TimerTest {
 		
 		//timer.schedule(task, delay, period);
 		//Create a worker thread to make timer
+		//cả 2 task này đều chạy trên cùng 1 thread.
 		timer.schedule(new FirstTask(), 0, 1000);
 		timer.schedule(new SecondTask(), 0, 2000);
 		
