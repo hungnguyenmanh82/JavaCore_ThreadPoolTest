@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadFactory;
  * >>Jvisualvm
  *
  */
-public class TestThreadPool2 {
+public class App2_ThreadPool {
 
 	static class MyRunable implements Runnable {  
 		private String message;  
@@ -42,14 +42,13 @@ public class TestThreadPool2 {
 		}
 
 		public Thread newThread(Runnable r) {
-			//stack size phải thiết lập ở constructor
+			//stack size chỉ thiết lập đc ở  constructor (sau đó ko thay đổi đc).
+			// Thread(ThreadGroup group, Runnable target, String name, long stackSize)
 			Thread thread = new Thread(r);
 			
 			thread.setPriority(Thread.NORM_PRIORITY);
 			thread.setName(prefix + "-" + counter++);		
-			//Thread stack size is configured by JVM. 
-			
-			
+					
 			return thread; 
 		}
 	}
@@ -64,7 +63,7 @@ public class TestThreadPool2 {
 		Thread.sleep(4000);
 		for (int i = 0; i < 10; i++) {  
 			Runnable worker = new MyRunable("" + i);  
-
+			
 			executor.execute(worker);//put all Runable to Queue of Threadpool and return immediately
 		}  
 

@@ -11,7 +11,7 @@ import java.util.concurrent.Executors;
  * >>Jvisualvm
  *
  */
-public class TestThreadPool1 {
+public class App1_ThreadPool {
 	
 	static class MyRunable implements Runnable {  
 		private String message;  

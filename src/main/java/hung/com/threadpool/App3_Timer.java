@@ -10,7 +10,7 @@ import java.util.concurrent.ThreadFactory;
  * 
  *
  */
-public class TimerTest {
+public class App3_Timer {
 
 	static class FirstTask extends TimerTask{
 		@Override
